@@ -20,7 +20,6 @@ class ComplaintFormClass extends Component {
             reason: "",
             description: "",
             reasonOptions: [
-                "Select One...",
                 "My account was debited erroneously",
                 "My card is expired",
                 "My transaction failed",
@@ -60,7 +59,8 @@ class ComplaintFormClass extends Component {
         //     description: this.state.description
         // }
 
-        this.setState({ feedbackDetails: feedbackDetails})
+        this.setState({ feedbackDetails: feedbackDetails});
+        console.log(feedbackDetails)
     }
 
     handleClearForm = (e) => {
@@ -99,6 +99,7 @@ class ComplaintFormClass extends Component {
                         <Select
                             title="Reason for Contsct"
                             name="reason"
+                            placeholder="Select a reason..."
                             value={this.state.reason}
                             handleChange={this.handleInputChange}
                             options={this.state.reasonOptions}
