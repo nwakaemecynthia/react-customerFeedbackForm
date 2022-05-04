@@ -25,7 +25,8 @@ class ComplaintFormClass extends Component {
                 "My transaction failed",
                 "Others"
             ],
-            feedbackDetails: null
+            feedbackDetails: null,
+            showFeedbackDetails: false
         }
 
     }
@@ -59,7 +60,7 @@ class ComplaintFormClass extends Component {
         //     description: this.state.description
         // }
 
-        this.setState({ feedbackDetails: feedbackDetails});
+        this.setState({ feedbackDetails: feedbackDetails, showFeedbackDetails: true});
         console.log(feedbackDetails)
     }
 
@@ -70,13 +71,14 @@ class ComplaintFormClass extends Component {
             email: "",
             reason: "",
             description: "",
+            showFeedbackDetails: false
         })
     }
 
     render() {
         return (
             <div className="row mt-5">
-                <div className="col-sm-6">
+                <form className="col-sm-6">
                     <div>
                         <Input
                             title="Full Name"
@@ -108,20 +110,20 @@ class ComplaintFormClass extends Component {
                     <div className="mt-4">
                         <TextArea
                             title="Description"
-                            rows="7"
+                            rows={7}
                             name="description"
                             value={this.state.description}
                             handleChange={this.handleInputChange}
                             placeholder="Reason for complaint..." />
                     </div>
                     <div className="my-4 d-flex flex-row">
-                        <Button onButtonClick={this.handleFormSubmit} title="Submit" backgroundColor="#27ae60" color="white" />
-                        <Button onButtonClick={this.handleClearForm} title="Reset" backgroundColor="#7f8c8d" color="white" />
+                        <Button onButtonClick={this.handleFormSubmit} title="Submit Complaint" backgroundColor="#27ae60" color="white" />
+                        <Button onButtonClick={this.handleClearForm} title="Reset Form" backgroundColor="#7f8c8d" color="white" />
                     </div>
+                </form>
 
-                </div>
                 <div className="col-sm-6">
-                    <Feedback feedbackDetails={this.handleFormSubmit} />
+                {this.state.showFeedbackDetails && <Feedback feedbackDetails={this.state.feedbackDetails} />}
                 </div>
             </div>
         )

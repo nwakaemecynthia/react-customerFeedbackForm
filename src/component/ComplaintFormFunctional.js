@@ -14,7 +14,7 @@ const ComplaintFormFunctional = () => {
     const [fullName, setFullname] = useState("");
     const [email, setEmail] = useState("");
     const [reason, setReason] = useState("");
-    const [desription, setDescription] = useState("");
+    const [description, setDescription] = useState("");
 
 
     return (
@@ -46,7 +46,7 @@ const ComplaintFormFunctional = () => {
                         title="Description"
                         rows="5"
                         name="description"
-                        value={desription}
+                        value={description}
                         handleChange={setDescription}
                         placeholder="Reason for complaint..." />
                 </div>
