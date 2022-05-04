@@ -59,9 +59,9 @@ class ComplaintFormClass extends Component {
         //     reason: this.state.reason,
         //     description: this.state.description
         // }
-
-        this.setState({ feedbackDetails: feedbackDetails, showFeedbackDetails: true});
-        console.log(feedbackDetails)
+        if(fullName !== "" && email !== ""  && reason !== "" && description !== "") {
+            this.setState({ feedbackDetails: feedbackDetails, showFeedbackDetails: true});
+        }
     }
 
     handleClearForm = (e) => {

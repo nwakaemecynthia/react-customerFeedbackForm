@@ -11,8 +11,8 @@ function App() {
     <div className="m-3">
       <h5 className="text-center">Customer Complaint Form</h5>
       <hr />
-      <ComplaintFormClass />
-      {/* <ComplaintFormFunctional /> */}
+      {/* <ComplaintFormClass /> */}
+      <ComplaintFormFunctional />
     </div>
 
   );
